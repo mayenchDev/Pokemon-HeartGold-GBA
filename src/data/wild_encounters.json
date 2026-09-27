@@ -77,6 +77,69 @@
       ],
       "encounters": [
         {
+          "map": "MAP_RUSTBORO_CITY_DEVON_CORP_1F",
+          "base_label": "gRustboroDevonCorp1F",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              { "min_level": 3, "max_level": 3, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 3, "max_level": 3, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 3, "max_level": 3, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_GASTLY" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_GASTLY" },
+              { "min_level": 6, "max_level": 6, "species": "SPECIES_GASTLY" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_RUSTBORO_CITY_DEVON_CORP_2F",
+          "base_label": "gRustboroDevonCorp2F",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              { "min_level": 3, "max_level": 3, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 3, "max_level": 3, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 3, "max_level": 3, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_GASTLY" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_GASTLY" },
+              { "min_level": 6, "max_level": 6, "species": "SPECIES_GASTLY" }
+            ]
+          }
+        },
+        {
+          "map": "MAP_RUSTBORO_CITY_DEVON_CORP_3F",
+          "base_label": "gRustboroDevonCorp3F",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              { "min_level": 3, "max_level": 3, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 3, "max_level": 3, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 3, "max_level": 3, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_BELLSPROUT" },
+              { "min_level": 4, "max_level": 4, "species": "SPECIES_GASTLY" },
+              { "min_level": 5, "max_level": 5, "species": "SPECIES_GASTLY" },
+              { "min_level": 6, "max_level": 6, "species": "SPECIES_GASTLY" }
+            ]
+          }
+        },
+        {
           "map": "MAP_ROUTE101",
           "base_label": "gRoute101",
           "land_mons": {

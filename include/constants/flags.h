@@ -51,7 +51,7 @@
 
 #else
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
+#define FLAG_CLEARED_BELLSPROUT_TOWER 0x20 // Reuses an unused flag for the tower story event.
 #define FLAG_UNUSED_0x021    0x21 // Unused Flag
 #define FLAG_UNUSED_0x022    0x22 // Unused Flag
 #define FLAG_UNUSED_0x023    0x23 // Unused Flag
@@ -263,8 +263,7 @@
 #define FLAG_RECEIVED_TM_ROAR                0xE7
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
-#define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
-
+#define FLAG_RECEIVED_TM_ROOST                0xE9 // Reuses an unused flag for Falkner's reward.
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
 #define FLAG_RECEIVED_GLASS_ORNAMENT         0xEC

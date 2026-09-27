@@ -1042,25 +1042,19 @@ RustboroCity_Text_YoureNewAroundHere:
 	.string "POKéMON TRAINER'S SCHOOL?$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire:
-	.string "I challenged the GYM LEADER, but…\p"
-	.string "It's not going to be easy winning with\n"
-	.string "my FIRE-type POKéMON…\p"
-	.string "FIRE-type POKéMON don't match up\n"
-	.string "well against ROCK-type POKéMON…$"
+	.string "FALKNER is the GYM LEADER here.\p"
+	.string "He trains with FLYING-type POKéMON\n"
+	.string "at the top of the Sprout Tower.$"
 
 RustboroCity_Text_MrBrineyWalksInTheTunnel:
-	.string "The old sailor MR. BRINEY lives in\n"
-	.string "a cottage by the sea.\p"
-	.string "He goes for walks in the tunnel every\n"
-	.string "so often.$"
+	.string "The SAGES live and train in the\n"
+	.string "Bellsprout TOWER.\p"
+	.string "You can see it rising above the\n"
+	.string "houses from almost anywhere.$"
 
 RustboroCity_Text_MrBrineyLovesPeeko:
-	.string "The old sailor MR. BRINEY lives in\n"
-	.string "a cottage by the sea.\p"
-	.string "He said he was going shopping in\n"
-	.string "SLATEPORT for his pet, PEEKO.\p"
-	.string "That old sea dog, he must really love\n"
-	.string "that PEEKO.$"
+	.string "The POKéMON TRAINER'S SCHOOL is a\n"
+	.string "good place to learn the basics.$"
 
 RustboroCity_Text_WowYouHavePokemon:
 	.string "Wow, you have POKéMON with you, too.\p"
@@ -1226,29 +1220,27 @@ RustboroCity_Text_TunnelNearingCompletion:
 	.string "across it in red paint…$"
 
 RustboroCity_Text_DevonCorpSign:
-	.string "DEVON CORPORATION\p"
-	.string "“For all your living needs, we make\n"
-	.string "it all.”$"
+	.string "Bellsprout TOWER\p"
+	.string "A place to train body and spirit.$"
 
 RustboroCity_Text_GymSign:
-	.string "RUSTBORO CITY POKéMON GYM\n"
-	.string "LEADER: ROXANNE\p"
-	.string "“The ROCK-loving honors student!”$"
+	.string "VIOLET CITY POKéMON GYM\n"
+	.string "LEADER: FALKNER\p"
+	.string "“The FLYING-type bird keeper!”$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign:
-	.string "DEVON CORP. BRANCH OFFICE\p"
-	.string "“Access limited to DEVON employees\n"
-	.string "and authorized personnel.”$"
+	.string "TRAINERS' SCHOOL\p"
+	.string "Learn about Pokémon and training.$"
 
 RustboroCity_Text_CitySign:
-	.string "RUSTBORO CITY\p"
-	.string "“The city probing the integration of\n"
-	.string "nature and science.”$"
+	.string "VIOLET CITY\p"
+	.string "“A historic city with the Sprout Tower\n"
+	.string "reaching toward the sky.”$"
 
 RustboroCity_Text_TrainersSchoolSign:
 	.string "POKéMON TRAINER'S SCHOOL\p"
-	.string "“We'll teach you anything about\n"
-	.string "POKéMON!”$"
+	.string "“Study hard and learn alongside\n"
+	.string "your Pokémon!”$"
 
 RustboroCity_Text_CuttersHouse:
 	.string "CUTTER'S HOUSE$"

@@ -13055,7 +13055,10 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("TM51"),
         .price = 3000,
-        .description = COMPOUND_STRING("?????"), // Todo
+        .description = COMPOUND_STRING(
+            "The user lands and\n"
+            "rests its body. It\n"
+            "restores HP."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
