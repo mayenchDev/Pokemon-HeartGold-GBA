@@ -4868,46 +4868,46 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Milk Drink
 
 === TRAINER_FLANNERY_1 ===
-Name: MORTY
+Name: FLANNERY
 Class: Leader
-Pic: Psychic M
-Gender: Male
-Music: Male
-Items: Super Potion / Super Potion
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Gastly
-Level: 21
+Numel
+Level: 24
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Lick
-- Spite
-- Mean Look
-- Curse
+- Overheat
+- Take Down
+- Magnitude
+- Sunny Day
 
-Haunter
-Level: 21
+Slugma
+Level: 24
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Hypnosis
-- Dream Eater
-- Curse
-- Nightmare
+- Overheat
+- Smog
+- Light Screen
+- Sunny Day
 
-Haunter
-Level: 23
-IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Curse
-- Mean Look
-- Sucker Punch
-- Night Shade
-
-Gengar @ Sitrus Berry
-Level: 25
+Camerupt
+Level: 26
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Hypnosis
-- Shadow Ball
-- Mean Look
-- Sucker Punch
+- Overheat
+- Tackle
+- Sunny Day
+- Attract
+
+Torkoal @ White Herb
+Level: 29
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Overheat
+- Sunny Day
+- Body Slam
+- Attract
 
 === TRAINER_NORMAN_1 ===
 Name: CHUCK
@@ -16796,3 +16796,45 @@ Double Battle: No
 Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MORTY_FORTREE ===
+Name: MORTY
+Class: Leader
+Pic: Psychic M
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Gastly
+Level: 21
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Lick
+- Spite
+- Mean Look
+- Curse
+
+Haunter
+Level: 21
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hypnosis
+- Dream Eater
+- Curse
+- Nightmare
+
+Haunter
+Level: 23
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Curse
+- Mean Look
+- Sucker Punch
+- Night Shade
+
+Gengar @ Sitrus Berry
+Level: 25
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Hypnosis
+- Shadow Ball
+- Mean Look
+- Sucker Punch

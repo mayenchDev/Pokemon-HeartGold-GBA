@@ -6,6 +6,12 @@ FortreeCity_Gym_MapScripts::
 FortreeCity_Gym_OnTransition:
 	special RotatingGate_InitPuzzle
 	setflag FLAG_TEMP_HIDE_FOLLOWER @ Hide follower bc of rotating gates
+	goto_if_set FLAG_MORTY_MET_BURNT_TOWER, FortreeCity_Gym_OnTransitionOpen
+	setflag FLAG_HIDE_FORTREE_GYM_OBJECTS
+	end
+
+FortreeCity_Gym_OnTransitionOpen:
+	clearflag FLAG_HIDE_FORTREE_GYM_OBJECTS
 	end
 
 FortreeCity_Gym_OnWarp:
@@ -18,10 +24,8 @@ FortreeCity_Gym_EventScript_InitRotatingGates::
 	end
 
 FortreeCity_Gym_EventScript_Winona::
-	trainerbattle_single TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, FortreeCity_Gym_EventScript_WinonaRematch
-	goto_if_unset FLAG_RECEIVED_TM_AERIAL_ACE, FortreeCity_Gym_EventScript_GiveAerialAce2
+	trainerbattle_single TRAINER_MORTY_FORTREE, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC
+	goto_if_unset FLAG_RECEIVED_TM_SHADOW_BALL, FortreeCity_Gym_EventScript_GiveAerialAce2
 	msgbox FortreeCity_Gym_Text_WinonaPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -37,37 +41,23 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	call Common_EventScript_SetGymTrainers
 	call FortreeCity_Gym_EventScript_GiveAerialAce
 	closemessage
-	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox FortreeCity_Gym_Text_RegisteredWinona, MSGBOX_DEFAULT
-	waitfanfare
-	closemessage
-	delay 30
-	setflag FLAG_ENABLE_WINONA_MATCH_CALL
-	setvar VAR_SCOTT_FORTREE_CALL_STEP_COUNTER, 0
-	setflag FLAG_SCOTT_CALL_FORTREE_GYM
 	release
 	end
 
 FortreeCity_Gym_EventScript_GiveAerialAce2::
-	giveitem ITEM_TM_AERIAL_ACE
+	giveitem ITEM_TM30
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_TM_AERIAL_ACE
+	setflag FLAG_RECEIVED_TM_SHADOW_BALL
 	release
 	end
 
 FortreeCity_Gym_EventScript_GiveAerialAce::
-	giveitem ITEM_TM_AERIAL_ACE
+	giveitem ITEM_TM30
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_TM_AERIAL_ACE
+	setflag FLAG_RECEIVED_TM_SHADOW_BALL
 	return
-
-FortreeCity_Gym_EventScript_WinonaRematch::
-	trainerbattle_rematch_double TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons
-	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
-	end
 
 FortreeCity_Gym_EventScript_Jared::
 	trainerbattle_single TRAINER_JARED, FortreeCity_Gym_Text_JaredIntro, FortreeCity_Gym_Text_JaredDefeat
@@ -137,12 +127,11 @@ FortreeCity_Gym_EventScript_GymStatue::
 FortreeCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "FORTREE GYM LEADER WINONA is\n"
-	.string "a master of FLYING-type POKéMON.\p"
-	.string "She's waiting at the back of this GYM,\n"
-	.string "behind the rotating doors.\p"
-	.string "She's waiting for new challengers\n"
-	.string "who are trying to take wing!\p"
+	.string "ECRUTEAK GYM LEADER MORTY is a\n"
+	.string "master of GHOST-type POKéMON.\p"
+	.string "He is waiting at the back of this GYM,\n"
+	.string "beyond the rotating gates.\p"
+	.string "His POKéMON will test your spirit!\p"
 	.string "Okay, go for it!$"
 
 FortreeCity_Gym_Text_GymGuidePostVictory:
@@ -150,23 +139,22 @@ FortreeCity_Gym_Text_GymGuidePostVictory:
 	.string "You've achieved liftoff!$"
 
 FortreeCity_Gym_Text_JaredIntro:
-	.string "Behold the elegant battle style of\n"
-	.string "BIRD POKéMON!$"
+	.string "Behold the eerie power of\n"
+	.string "GHOST POKéMON!$"
 
 FortreeCity_Gym_Text_JaredDefeat:
 	.string "You…\n"
 	.string "You're strong…$"
 
 FortreeCity_Gym_Text_JaredPostBattle:
-	.string "A TRAINER has to be smart to keep\n"
-	.string "up with unexpected turns of events.\p"
-	.string "Do you have the smarts to get to\n"
-	.string "our LEADER?$"
+	.string "GHOST POKéMON can be tricky to face.\p"
+	.string "Can you keep your nerve all the way\n"
+	.string "to our LEADER?$"
 
 FortreeCity_Gym_Text_EdwardoIntro:
-	.string "The lovers of BIRD POKéMON aspire\n"
-	.string "to join this GYM.\p"
-	.string "As a member of the FORTREE GYM,\n"
+	.string "The mysteries of GHOST POKéMON\n"
+	.string "captivate me.\p"
+	.string "As a member of the ECRUTEAK GYM,\n"
 	.string "I'm not allowed to lose!$"
 
 FortreeCity_Gym_Text_EdwardoDefeat:
@@ -180,33 +168,33 @@ FortreeCity_Gym_Text_EdwardoPostBattle:
 	.string "myself even stronger.$"
 
 FortreeCity_Gym_Text_FlintIntro:
-	.string "There's no need for WINONA, our GYM\n"
+	.string "There's no need for MORTY, our GYM\n"
 	.string "LEADER, to deal with you!\p"
 	.string "I'm plenty good enough for you!$"
 
 FortreeCity_Gym_Text_FlintDefeat:
-	.string "WINONA, I…\n"
+	.string "MORTY, I…\n"
 	.string "I lost!$"
 
 FortreeCity_Gym_Text_FlintPostBattle:
-	.string "WINONA is cute and she's strong.\n"
+	.string "MORTY is calm and he's strong.\n"
 	.string "She's the ultimate LEADER!\p"
 	.string "Blush…$"
 
 FortreeCity_Gym_Text_AshleyIntro:
-	.string "WINONA taught me personally!\n"
+	.string "MORTY taught me personally!\n"
 	.string "You can't beat me easily!$"
 
 FortreeCity_Gym_Text_AshleyDefeat:
 	.string "I was beaten…$"
 
 FortreeCity_Gym_Text_AshleyPostBattle:
-	.string "Thanks to WINONA, the people of\n"
-	.string "FORTREE can live without fear.$"
+	.string "Thanks to MORTY, the people of\n"
+	.string "ECRUTEAK can face the unknown.$"
 
 FortreeCity_Gym_Text_HumbertoIntro:
-	.string "When WINONA takes to battle, her face\n"
-	.string "shines with beautiful determination…\p"
+	.string "When MORTY takes to battle, he\n"
+	.string "focuses his mind on the unseen…\p"
 	.string "I'm not letting you witness that\n"
 	.string "lovely sight!$"
 
@@ -216,12 +204,12 @@ FortreeCity_Gym_Text_HumbertoDefeat:
 
 FortreeCity_Gym_Text_HumbertoPostBattle:
 	.string "You'd better watch it!\n"
-	.string "Don't get distracted staring at WINONA\l"
-	.string "or you'll go crashing down in a heap!$"
+	.string "Don't get distracted staring at MORTY\l"
+	.string "or you'll lose your nerve in a heap!$"
 
 FortreeCity_Gym_Text_DariusIntro:
 	.string "You'd better know that there are all\n"
-	.string "sorts of FLYING-type POKéMON.\p"
+	.string "sorts of GHOST-type POKéMON.\p"
 	.string "You do know that, right?$"
 
 FortreeCity_Gym_Text_DariusDefeat:
@@ -230,90 +218,46 @@ FortreeCity_Gym_Text_DariusDefeat:
 FortreeCity_Gym_Text_DariusPostBattle:
 	.string "Sure, you beat me all right.\n"
 	.string "But you'd better watch it! Our LEADER\l"
-	.string "WINONA's POKéMON are all business.$"
+	.string "MORTY's POKéMON are all business.$"
 
 FortreeCity_Gym_Text_WinonaIntro:
-	.string "I am WINONA. I am the LEADER of\n"
-	.string "the FORTREE POKéMON GYM.\p"
-	.string "I have become one with BIRD POKéMON\n"
-	.string "and have soared the skies…\p"
-	.string "However grueling the battle, we have\n"
-	.string "triumphed with grace…\p"
-	.string "Witness the elegant choreography\n"
-	.string "of BIRD POKéMON and I!$"
+	.string "I am MORTY, the LEADER of the\n"
+	.string "ECRUTEAK POKéMON GYM.\p"
+	.string "I have studied the legends of the\n"
+	.string "BURNT TOWER for many years.\p"
+	.string "I can sense the future in the\n"
+	.string "movements of my GHOST POKéMON.\p"
+	.string "Let me show you the power of spirit!$"
 
 FortreeCity_Gym_Text_WinonaDefeat:
-	.string "Never before have I seen a TRAINER\n"
-	.string "command POKéMON with more grace\l"
-	.string "than I…\p"
-	.string "In recognition of your prowess,\n"
-	.string "I present to you this GYM BADGE.$"
+	.string "Your spirit is stronger than I foresaw.\p"
+	.string "In recognition of your skill, accept\n"
+	.string "the FOG BADGE.$"
 
 FortreeCity_Gym_Text_ReceivedFeatherBadge:
-	.string "{PLAYER} received the FEATHER BADGE\n"
-	.string "from WINONA.$"
+	.string "{PLAYER} received the FOG BADGE\n"
+	.string "from MORTY.$"
 
 FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis:
-	.string "With the FEATHER BADGE, all POKéMON up\n"
-	.string "to LV 70, even those received through\l"
-	.string "trades, will obey your every command.\p"
-	.string "You will also be able to use\n"
-	.string "the HM move FLY outside of battle.\p"
-	.string "And this…\n"
-	.string "This is a gift from me.$"
+	.string "With the FOG BADGE, POKéMON up to\n"
+	.string "LV 70 will obey you.\p"
+	.string "You may also use FLY outside\n"
+	.string "of battle.\p"
+	.string "And please take this gift.$"
 
 FortreeCity_Gym_Text_ExplainAerialAce:
-	.string "TM40 contains AERIAL ACE.\p"
-	.string "Its speed…\n"
-	.string "No POKéMON should be able to avoid it.\p"
-	.string "… … … … … …$"
-
-FortreeCity_Gym_Text_RegisteredWinona:
-	.string "Registered GYM LEADER WINONA\n"
-	.string "in the POKéNAV.$"
+	.string "TM30 contains SHADOW BALL.\p"
+	.string "It may lower the target's SP. DEF.\p"
+	.string "Use it well.$"
 
 FortreeCity_Gym_Text_WinonaPostBattle:
-	.string "Though I fell to you, I will remain\n"
-	.string "devoted to BIRD POKéMON.$"
+	.string "There is still much I must learn about\n"
+	.string "the legends of ECRUTEAK.$"
 
 FortreeCity_Gym_Text_GymStatue:
-	.string "FORTREE CITY POKéMON GYM$"
+	.string "ECRUTEAK CITY POKéMON GYM$"
 
 FortreeCity_Gym_Text_GymStatueCertified:
-	.string "FORTREE CITY POKéMON GYM\p"
-	.string "WINONA'S CERTIFIED TRAINERS:\n"
+	.string "ECRUTEAK CITY POKéMON GYM\p"
+	.string "MORTY'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
-
-FortreeCity_Gym_Text_WinonaPreRematch:
-	.string "WINONA: We humans can never escape\n"
-	.string "gravity's pull on the ground.\p"
-	.string "But by striving for excellence,\n"
-	.string "we have the power to soar!\p"
-	.string "You have scaled the pinnacle as\n"
-	.string "the reigning CHAMPION.\p"
-	.string "Please, allow me to see your power\n"
-	.string "at full flight!$"
-
-FortreeCity_Gym_Text_WinonaRematchDefeat:
-	.string "I failed to reach your height again…$"
-
-FortreeCity_Gym_Text_WinonaPostRematch:
-	.string "WINONA: Even though I have lost,\n"
-	.string "the wings of my heart remain unbroken.\p"
-	.string "I can rise and soar again and\n"
-	.string "yet again.\p"
-	.string "I am convinced of it!$"
-
-FortreeCity_Gym_Text_WinonaRematchNeedTwoMons:
-	.string "WINONA: We humans can never escape\n"
-	.string "gravity's pull on the ground.\p"
-	.string "But by striving for excellence,\n"
-	.string "we have the power to soar!\p"
-	.string "You have scaled the pinnacle as\n"
-	.string "the reigning CHAMPION.\p"
-	.string "Please, allow me to see your power\n"
-	.string "at full flight!\p"
-	.string "Oh, no… Do you have but one\n"
-	.string "POKéMON with you?\p"
-	.string "Please return with two POKéMON\n"
-	.string "at the very least.$"
