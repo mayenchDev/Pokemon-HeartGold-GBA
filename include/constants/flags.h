@@ -1327,7 +1327,7 @@
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
 #define FLAG_DEFEATED_ROUTE102_SUDOWOODO                            0x4F9
-#define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
+#define FLAG_SLOWPOKE_WELL_SILVER_DEFEATED                          0x4FA
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
 #define FLAG_DEFEATED_ELITE_4_PHOEBE                                0x4FC
