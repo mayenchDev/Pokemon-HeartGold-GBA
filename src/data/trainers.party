@@ -16838,3 +16838,49 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Shadow Ball
 - Mean Look
 - Sucker Punch
+
+=== TRAINER_SAGE_JOEL ===
+Name: SAGE JOEL
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Bellsprout
+Level: 3
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Vine Whip
+- Growth
+
+=== TRAINER_SAGE_EDMOND ===
+Name: SAGE EDMOND
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Bellsprout
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Vine Whip
+- Growth
+
+=== TRAINER_SAGE_LI ===
+Name: SAGE LI
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Male
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Bellsprout
+Level: 7
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Vine Whip
+- Growth
