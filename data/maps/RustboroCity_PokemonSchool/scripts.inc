@@ -74,19 +74,21 @@ RustboroCity_PokemonSchool_EventScript_StudentNotebook::
 	msgbox RustboroCity_PokemonSchool_Text_StudentsNotes, MSGBOX_SIGN
 	end
 
-RustboroCity_PokemonSchool_EventScript_Teacher::
+RustboroCity_PokemonSchool_EventScript_Morty::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_QUICK_CLAW, RustboroCity_PokemonSchool_EventScript_GaveQuickClaw
-	call_if_eq VAR_FACING, DIR_EAST, RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsEast
-	call_if_eq VAR_FACING, DIR_WEST, RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsWest
-	msgbox RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw, MSGBOX_DEFAULT
-	giveitem ITEM_QUICK_CLAW
-	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
+	goto_if_set FLAG_MORTY_MET_BURNT_TOWER, RustboroCity_PokemonSchool_EventScript_MortyAfterReturn
+	msgbox RustboroCity_PokemonSchool_Text_MortyAtBurntTower, MSGBOX_DEFAULT
+	setflag FLAG_MORTY_MET_BURNT_TOWER
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
-	setflag FLAG_RECEIVED_QUICK_CLAW
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+RustboroCity_PokemonSchool_EventScript_MortyAfterReturn::
+	msgbox RustboroCity_PokemonSchool_Text_MortyAfterReturn, MSGBOX_DEFAULT
 	release
 	end
 
@@ -259,6 +261,19 @@ RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
 	.string "Just those alone will give you many\n"
 	.string "topics to study!$"
 
+RustboroCity_PokemonSchool_Text_MortyAtBurntTower:
+	.string "I am MORTY, the ECRUTEAK GYM LEADER.\p"
+	.string "I came to investigate the BURNT TOWER.\n"
+	.string "The legends of HO-OH and LUGIA are\l"
+	.string "closely tied to this place.\p"
+	.string "I should return to my GYM now.\n"
+	.string "Please come challenge me in ECRUTEAK.$"
+
+RustboroCity_PokemonSchool_Text_MortyAfterReturn:
+	.string "The mystery of the BURNT TOWER will\n"
+	.string "have to wait. I have returned to my\l"
+	.string "GYM in ECRUTEAK. Come challenge me.$"
+
 RustboroCity_PokemonSchool_Text_TradingRightNow:
 	.string "I'm trading POKéMON with my friend\n"
 	.string "right now.$"
@@ -348,4 +363,3 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge:
 	.string "you in battle.\p"
 	.string "It's hard to tell what you're like as\n"
 	.string "a TRAINER from a LEAGUE BADGE.$"
-
