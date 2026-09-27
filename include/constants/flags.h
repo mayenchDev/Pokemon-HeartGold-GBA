@@ -52,10 +52,10 @@
 #else
 
 #define FLAG_CLEARED_BELLSPROUT_TOWER 0x20 // Reuses an unused flag for the tower story event.
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
+#define FLAG_GOLDENROD_ROCKET_GRUNT_1_DEFEATED 0x21
+#define FLAG_GOLDENROD_ROCKET_GRUNT_2_DEFEATED 0x22
+#define FLAG_GOLDENROD_ROCKET_GRUNT_3_DEFEATED 0x23
+#define FLAG_GOLDENROD_RADIO_DIRECTOR_SAVED     0x24
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
