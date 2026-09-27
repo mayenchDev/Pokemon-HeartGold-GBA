@@ -1,35 +1,43 @@
 FortreeCity_House5_MapScripts::
 	.byte 0
 
-FortreeCity_House5_EventScript_PokefanF::
-	msgbox FortreeCity_House5_Text_TreeHousesAreGreat, MSGBOX_NPC
+FortreeCity_House5_EventScript_KimonoGirl1::
+	msgbox FortreeCity_House5_Text_KimonoGirl1, MSGBOX_NPC
 	end
 
-FortreeCity_House5_EventScript_Man::
-	msgbox FortreeCity_House5_Text_AdaptedToNature, MSGBOX_NPC
+FortreeCity_House5_EventScript_KimonoGirl2::
+	msgbox FortreeCity_House5_Text_KimonoGirl2, MSGBOX_NPC
 	end
 
-FortreeCity_House5_EventScript_Zigzagoon::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
-	msgbox FortreeCity_House5_Text_Zigzagoon, MSGBOX_DEFAULT
-	waitmoncry
-	release
+FortreeCity_House5_EventScript_KimonoGirl3::
+	msgbox FortreeCity_House5_Text_KimonoGirl3, MSGBOX_NPC
 	end
 
-FortreeCity_House5_Text_TreeHousesAreGreat:
-	.string "The tree houses of FORTREE are great!\p"
-	.string "I think it's the number one town for\n"
-	.string "living together with POKéMON.$"
+FortreeCity_House5_EventScript_KimonoGirl4::
+	msgbox FortreeCity_House5_Text_KimonoGirl4, MSGBOX_NPC
+	end
 
-FortreeCity_House5_Text_AdaptedToNature:
-	.string "POKéMON and people have adapted to\n"
-	.string "nature for survival.\p"
-	.string "There's no need to make nature\n"
-	.string "conform to the way we want to live.$"
+FortreeCity_House5_EventScript_KimonoGirl5::
+	msgbox FortreeCity_House5_Text_KimonoGirl5, MSGBOX_NPC
+	end
 
-FortreeCity_House5_Text_Zigzagoon:
-	.string "ZIGZAGOON: Bufuu!$"
+FortreeCity_House5_Text_KimonoGirl1:
+	.string "Welcome to the DANCE THEATER.\p"
+	.string "Our dances are offerings to the\n"
+	.string "POKéMON that protect JOHTO.$"
 
+FortreeCity_House5_Text_KimonoGirl2:
+	.string "The legends of HO-OH and LUGIA have\n"
+	.string "been passed down for generations.$"
+
+FortreeCity_House5_Text_KimonoGirl3:
+	.string "A TRAINER's heart must be as steady\n"
+	.string "as their POKéMON's spirit.$"
+
+FortreeCity_House5_Text_KimonoGirl4:
+	.string "Have you visited the BURNT TOWER?\p"
+	.string "A strange power still lingers there.$"
+
+FortreeCity_House5_Text_KimonoGirl5:
+	.string "If you can earn the trust of all five\n"
+	.string "of us, you may meet a legend one day.$"
