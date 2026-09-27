@@ -13,6 +13,62 @@ Route102_EventScript_RouteSignPetalburg::
 	msgbox Route102_Text_RouteSignPetalburg, MSGBOX_SIGN
 	end
 
+Route102_EventScript_Sudowoodo::
+	lock
+	faceplayer
+	checkitem ITEM_WAILMER_PAIL
+	goto_if_eq VAR_RESULT, FALSE, Route102_EventScript_SudowoodoNoPail
+	msgbox Route102_Text_SudowoodoWaterPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route102_EventScript_WaterSudowoodo
+	release
+	end
+
+Route102_EventScript_SudowoodoNoPail::
+	msgbox Route102_Text_SudowoodoStrange, MSGBOX_DEFAULT
+	release
+	end
+
+Route102_EventScript_WaterSudowoodo::
+	special DoWateringBerryTreeAnim
+	waitse
+	playse SE_SUDOWOODO_SHAKE
+	applymovement LOCALID_ROUTE102_SUDOWOODO, Route102_Movement_SudowoodoShake
+	waitmovement 0
+	msgbox gText_Sudowoodo_Attacked, MSGBOX_DEFAULT
+	closemessage
+	waitse
+	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setvar VAR_LAST_TALKED, LOCALID_ROUTE102_SUDOWOODO
+	setwildbattle SPECIES_SUDOWOODO, 20
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route102_EventScript_SudowoodoDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route102_EventScript_SudowoodoDefeated
+	release
+	end
+
+Route102_EventScript_SudowoodoDefeated::
+	setflag FLAG_DEFEATED_ROUTE102_SUDOWOODO
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route102_Movement_SudowoodoShake:
+	face_right
+	delay_8
+	face_down
+	delay_8
+	face_left
+	delay_8
+	face_down
+	delay_8
+	face_right
+	delay_8
+	face_down
+	step_end
+
 Route102_EventScript_Boy::
 	msgbox Route102_Text_CatchWholeBunchOfPokemon, MSGBOX_NPC
 	end
@@ -101,9 +157,16 @@ Route102_Text_CatchWholeBunchOfPokemon:
 	.string "POKéMON!$"
 
 Route102_Text_RouteSignOldale:
-	.string "ROUTE 102\n"
-	.string "{RIGHT_ARROW} OLDALE TOWN$"
+	.string "RUTA 36\n"
+	.string "{RIGHT_ARROW} CIUDAD MALVA$"
 
 Route102_Text_RouteSignPetalburg:
-	.string "ROUTE 102\n"
-	.string "{LEFT_ARROW} PETALBURG CITY$"
+	.string "RUTA 36\n"
+	.string "{LEFT_ARROW} CIUDAD CEREZO$"
+
+Route102_Text_SudowoodoStrange:
+	.string "Es un árbol extraño. Parece que\n"
+	.string "tiembla si te acercas…$"
+
+Route102_Text_SudowoodoWaterPrompt:
+	.string "El árbol parece sediento.\n¿Quieres regarlo?$"
